@@ -1,13 +1,16 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+//Model que se encargará de realizar las consultas a la base de datos en formato QUERY
 class Indicadores_model extends CI_Model {
     
+	//se carga la conexión a la base de datos realizada en database.php en config
     public function __construct(){
 		parent::__construct();
 		$this->load->database();
 	}
 
+	//Consulta SELECT a la base de datos en la tabla info_valor
 	public function getIndicadores() {
 
 		$data = $this->db->get('info_valor');
@@ -19,6 +22,7 @@ class Indicadores_model extends CI_Model {
 
 	}
 
+	//Consulta INSERT a la base de datos en la tabla info_valor de los datos en la variable $data entregados a través de AJAX
 	public function insertIndicador($data) {
 
 		$this->db->insert('info_valor', $data);
@@ -26,6 +30,7 @@ class Indicadores_model extends CI_Model {
 
 	}
 
+	//Consulta SELECT WHERE ID a la base de datos en la tabla info_valor de los datos en la variable $data entregados a través de AJAX
 	public function editIndicador($id) {
 
 		$this->db->select('*');
@@ -40,6 +45,7 @@ class Indicadores_model extends CI_Model {
 
 	}
 
+	//Consulta UPDATE WHERE ID a la base de datos en la tabla info_valor de los datos a través de la API
 	public function updateIndicadorApi($id, $data) {
 
 		$this->db->where("id", $id);
@@ -48,12 +54,14 @@ class Indicadores_model extends CI_Model {
 
 	}
 
+	//Consulta UPDATE a la base de datos en la tabla info_valor de los datos en la variable $data entregados a través de AJAX
 	public function updateIndicadorForm($data) {
 
 		return $this->db->update('info_valor', $data, array('id' => $data['id']));
 
 	}
 
+	//Consulta DELETE a la base de datos en la tabla info_valor de los datos correspondientes a la variable $id entregados a través de AJAX
 	public function deleteIndicador($id)
     {
         $this->db->delete('info_valor', array('id' => $id));
@@ -61,6 +69,7 @@ class Indicadores_model extends CI_Model {
 		return true;  
     }
 
+	//Consulta SELECT a la base de datos en la tabla info_valor de los todos los datos que luego serán manipulados para mostrar en el gráfico
 	public function dashboardGet(){
 
 		$query = $this->db->get('info_valor');

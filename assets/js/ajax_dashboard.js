@@ -61,7 +61,10 @@ function(data){
                 fill: true,
                 lineTension: 0,
                 pointBorderWidth: 2,
-                pointHoverBorderWidth: 30
+                pointHoverBorderWidth: 30,
+                pointLabels: {
+                    fontStyle: "white"
+                }
             }]
         },
         options: {
@@ -85,61 +88,36 @@ function(data){
         }
     });
 
+    //Función que marcará el valor mínimo de fechas que puede trabajar Chart.Js
     function startDateFilter(date){
 
+        //Variable que guardará el valor de la fecha ingresada en el parámetro de la función
         const startDate = new Date(date.value);
+        //Variable que guardará el parse de startDate a milisegundos para tener mayor precisión a la hora de calcular las fechas
         var parseDate =startDate.setHours(0, 0, 0, 0)
         console.log(parseDate);
 
+        //se indica el valor mínimo que puede tener el eje x en ChartJs según el valor indicado en el input "desde" que ejecutará la función startDateFilter
         myChart.config.options.scales.x.min = parseDate;
+        //Se actualiza la información de ChartJs
         myChart.update();
     }
 
+    //Función que marcará el valor Máximo de fechas que puede trabajar Chart.Js
     function endDateFilter(date){
 
+        //Variable que guardará el valor de la fecha ingresada en el parámetro de la función
         const endDate = new Date(date.value);
+        //Variable que guardará el parse de endDate a milisegundos para tener mayor precisión a la hora de calcular las fechas
         var parseDate =endDate.setHours(0, 0, 0, 0)
         console.log(parseDate);
 
+        //se indica el valor máximo que puede tener el eje x en ChartJs según el valor indicado en el input "hasta" que ejecutará la función endDateFilter
         myChart.config.options.scales.x.max = parseDate;
         myChart.update();
     }
 
-    //función para filtrar los datos 
-/*     function filterData(date){
-
-        
-        //guardo los datos de fechas en otra variable para no alterar valores originales
-        let fechas2 = [...fechas];
-        console.log("fechas2", fechas2);
-    
-        //Obtengo los id de los inputs
-        var desde = document.getElementById('desde');
-        var hasta = document.getElementById('hasta');
-    
-        //obtengo los índices de las fechas
-        var indexStartDate = fechas2.indexOf(desde.value); 
-        var indexEndData = fechas2.indexOf(hasta.value); 
-        console.log(indexStartDate);
-        console.log(indexEndData);
-
-        //extraigo las fechas indicadas por los inputs que están guardads en las variables indexStartDate e indexEndData
-        var filterDate = fechas2.slice(indexStartDate, indexEndData + 1);
-
-        //Actualizar los labels del gráfico según los valores indicados previamente
-        myChart.config.data.labels = filterDate;
-        myChart.update();
-    
-        //copia de los valores de valorUF a valorUF2 para no alterar valores originales
-        var valorUF2 = [...valorUF];
-        var filterValue = valorUF2.slice(indexStartDate, indexEndData + 1);
-    
-        myChart.config.data.datasets[0].data = filterValue;
-    
-        myChart.update();
-        } */
-
-        //los ID'S de los inputs desde y hasta cuando se aplique el atributo "onchange" se ejecutará la función filterData()
+        //los ID'S de los inputs desde y hasta que cuando se aplique el atributo "onchange" se ejecutará la función startDateFilter(date) y endDateFilter(date) según corresponda para marcar los límites mínimo y máximo de los inputs
         $("#desde").on('change', function(){
             startDateFilter(this);
         });

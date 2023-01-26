@@ -1,0 +1,35 @@
+h1{
+color:#0a3e75;
+}
+.mode {
+    float:right;
+    color:white;
+    height: 40px;
+    border-radius: 10px;
+    margin: 30px;
+}
+.toggleOn {
+    float:right;
+    color:#0a3e75;
+    height: 40px;
+    border-radius: 10px;
+    margin: 30px;
+}
+.center{
+    text-align: center;
+}
+.change {
+    cursor: pointer;
+    border: 2px solid #555;
+    border-radius: 40%;
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    margin-left: 8px;
+    color: white;
+    background-color: #363a37;
+}
+.dark{
+    background-color: #222;
+    color: #4899ef;
+}
