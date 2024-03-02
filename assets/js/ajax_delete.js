@@ -30,7 +30,7 @@ $(document).on("click", "#delete", function(e){
         if (result.isConfirmed) {
             //Petición ajax que conectará con la ruta delete
             $.ajax({
-                url: "/solutoriatask/indicadores/delete",
+                url: "/repositorio-task/indicadores/delete",
                 type: "post",
                 dataType: "json",
                 data: {

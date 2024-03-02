@@ -57,12 +57,12 @@ class Indicadores extends CI_Controller {
         if($this->input->is_ajax_request()){
 
             //Validación de los formularios
-            $this->form_validation->set_rules('nombre_indicador', 'Nombre_Indicador', 'required');
-            $this->form_validation->set_rules('codigo_indicador', 'Codigo_indicador', 'required');
-            $this->form_validation->set_rules('unidad_medida_indicador', 'Unidad_medida_indicador', 'required');
-            $this->form_validation->set_rules('valor_indicador', 'Valor_indicador', 'required');
-            $this->form_validation->set_rules('fecha_indicador', 'Fecha_indicador', 'required');
-            $this->form_validation->set_rules('origen_indicador', 'Origen_indicador', 'required');
+            $this->form_validation->set_rules('nombreIndicador', 'Nombre_Indicador', 'required');
+            $this->form_validation->set_rules('codigoIndicador', 'Codigo_indicador', 'required');
+            $this->form_validation->set_rules('unidadMedidaIndicador', 'Unidad_medida_indicador', 'required');
+            $this->form_validation->set_rules('valorIndicador', 'Valor_indicador', 'required');
+            $this->form_validation->set_rules('fechaIndicador', 'Fecha_indicador', 'required');
+            $this->form_validation->set_rules('origenIndicador', 'Origen_indicador', 'required');
 
 
             //Si hay un problema con la validación de los formularios, entonces mostrará un error
@@ -155,12 +155,12 @@ class Indicadores extends CI_Controller {
 
             //Variable data que guardará en un array los datos entregados en los IDS de la vista para actualizarlos en la base de datos
             $data['id'] = $this->input->post('id_indicador_edit');
-            $data['nombre_indicador'] = $this->input->post('nombre_indicador_edit');
-            $data['codigo_indicador'] = $this->input->post('codigo_indicador_edit');
-            $data['unidad_medida_indicador'] = $this->input->post('unidad_medida_indicador_edit');
-            $data['valor_indicador'] = $this->input->post('valor_indicador_edit');
-            $data['fecha_indicador'] = $this->input->post('fecha_indicador_edit');
-            $data['origen_indicador'] = $this->input->post('origen_indicador_edit');
+            $data['nombreIndicador'] = $this->input->post('nombre_indicador_edit');
+            $data['codigoIndicador'] = $this->input->post('codigo_indicador_edit');
+            $data['unidadMedidaIndicador'] = $this->input->post('unidad_medida_indicador_edit');
+            $data['valorIndicador'] = $this->input->post('valor_indicador_edit');
+            $data['fechaIndicador'] = $this->input->post('fecha_indicador_edit');
+            $data['origenIndicador'] = $this->input->post('origen_indicador_edit');
 
             //Si se realiza el update de data en la base de datos correctamente entonces mostrará mensaje 
             if($result = $this->indicadores->updateIndicadorForm($data)){

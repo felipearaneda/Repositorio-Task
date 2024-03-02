@@ -8,7 +8,7 @@ $(document).on("click", "#edit", function(e){
     
     $.ajax({
         //Petición ajax que conectará con la ruta edit
-        url: "/solutoriatask/indicadores/edit",
+        url: "/repositorio-task/indicadores/edit",
         type: 'post',
         datatype: "json",
         data: {
@@ -23,12 +23,12 @@ $(document).on("click", "#edit", function(e){
             $("#modalEdit").modal('show');
             //A cada etiqueta dentro del modal edit se identificará con su respectivo ID para luego entregarle el valor ya obtenido en la variable res que contiene los datos específicos según el click realizado anteriormente a cada etiqueta de id "edit"
             $("#id_indicador_edit").val(res.id);
-            $("#nombre_indicador_edit").val(res.nombre_indicador);
-            $("#codigo_indicador_edit").val(res.codigo_indicador);
-            $("#unidad_medida_indicador_edit").val(res.unidad_medida_indicador);
-            $("#valor_indicador_edit").val(res.valor_indicador);
-            $("#fecha_indicador_edit").val(res.fecha_indicador);
-            $("#origen_indicador_edit").val(res.origen_indicador);
+            $("#nombre_indicador_edit").val(res.nombreIndicador);
+            $("#codigo_indicador_edit").val(res.codigoIndicador);
+            $("#unidad_medida_indicador_edit").val(res.unidadMedidaIndicador);
+            $("#valor_indicador_edit").val(res.valorIndicador);
+            $("#fecha_indicador_edit").val(res.fechaIndicador);
+            $("#origen_indicador_edit").val(res.origenIndicador);
 
             console.log(res);
 

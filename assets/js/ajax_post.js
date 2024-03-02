@@ -13,17 +13,17 @@ $(document).on("click", "#send", function(e){
 
     $.ajax({
         //se conecta con la ruta insert para insertar los datos en la base de datos
-        url: "/solutoriatask/indicadores/insert",
+        url: "/repositorio-task/indicadores/insert",
         type: 'post',
         datatype: "json",
         //data que pasara los valores correspondientes de las variables anterior mencionadas para insertarlas en cada columna de la tabla info_valor en la base de datos
         data: {
-            "nombre_indicador": postNombre,
-            "codigo_indicador": postCodigo,
-            "unidad_medida_indicador": postUnidad,
-            "valor_indicador": postValor,
-            "fecha_indicador": postFecha,
-            "origen_indicador": postOrigen,
+            "nombreIndicador": postNombre,
+            "codigoIndicador": postCodigo,
+            "unidadMedidaIndicador": postUnidad,
+            "valorIndicador": postValor,
+            "fechaIndicador": postFecha,
+            "origenIndicador": postOrigen,
         },
         //Si la inserción de datos es correcta entonces
         success: function(data){

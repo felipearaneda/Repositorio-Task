@@ -11,7 +11,7 @@
       <!-- Botòn que lleva a la página principal -->
       <a href="<?= base_url() ?>indicadores/" class="btn btn-primary"> Página principal </a> 
     </div>
-      <!-- Cavas con id myChart que será utilizado por assets/js/ajax_dashboard.js para cargar ChartJs -->
+      <!-- Canvas con id myChart que será utilizado por assets/js/ajax_dashboard.js para cargar ChartJs -->
       <canvas id="myChart" style="margin: 0 auto; width: 90%;"></canvas>
       <div style="text-align:center">
         <!-- Inputs con id "desde" y "hasta" para marcar los límites de fechas según los valores ingresados en la base de datos -->

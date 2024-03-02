@@ -2,7 +2,7 @@
 var fechas = [];
 var valorUF = [];
 
-$.get("/solutoriatask/indicadores/fetch",
+$.get("/repositorio-task/indicadores/fetch",
 
 function(data){
     var res = JSON.parse(data); //parse a JSON de data y se guarda en res
@@ -10,8 +10,8 @@ function(data){
 
     //Loop para acceder a los datos de res.data en i e insertarlos en fechas y valorUF correspondiente
     for (let i = 0; i < res.data.length; i++) { 
-        fechas.push(res.data[i].fecha_indicador);
-        valorUF.push(res.data[i].valor_indicador);
+        fechas.push(res.data[i].fechaIndicador);
+        valorUF.push(res.data[i].valorIndicador);
         };
 
     const ctx = $("#myChart");
