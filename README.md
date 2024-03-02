@@ -1,6 +1,6 @@
 Tecnologías usadas para el proyecto:
 
-Xampp con una base de datos llamada "bd_generica", a partir de ahí lo demás es modificable en el modelo para que la información de la base de datos y la app sean concordantes.
+Utilicé Xampp con una base de datos llamada "bd_generica", aunque todo lo relacionado con la base de datos es modificable en los archivos de la app, básicamente los cambios deben ser en el modelo para que la información de la base de datos y la app sean concordantes.
 Al realizar los cambios anteriores, se recomienda ver los archivos dentro de la carpeta "api", "views" y dentro de "assets" en la carpeta "js" en todos los archivos que comiencen con "ajax", esto ya que al tener una base de datos personalizada las peticiones de AJAX y por API tienen que comunicarse con las tablas y la información de la base datos.
 
 En caso de haber errores del tipo "datatables" o "bootstrap" lo más probable es que el proyecto esté desactualizado. Dame tiempo, lo actualizo seguido!
