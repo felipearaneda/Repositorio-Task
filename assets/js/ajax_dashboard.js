@@ -2,7 +2,7 @@
 var fechas = [];
 var valorUF = [];
 
-$.get("/repositorio-task/indicadores/fetch",
+$.get("/api-crud/indicadores/fetch",
 
 function(data){
     var res = JSON.parse(data); //parse a JSON de data y se guarda en res

@@ -8,7 +8,7 @@ $(document).on("click", "#edit", function(e){
     
     $.ajax({
         //Petición ajax que conectará con la ruta edit
-        url: "/repositorio-task/indicadores/edit",
+        url: "/api-crud/indicadores/edit",
         type: 'post',
         datatype: "json",
         data: {

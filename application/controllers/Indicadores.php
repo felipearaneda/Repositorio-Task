@@ -29,19 +29,19 @@ class Indicadores extends CI_Controller {
     //Función para traer los datos a la vista
     public function fetch() {
 
-        //Validación para ejecutar sólo si es una peticion de AJAX
+        //Validación para ejecutar sólo si es una petición de AJAX
         if($this->input->is_ajax_request()){
 
             //Si la obtención de datos es correcta entonces mostrará un mensaje en la consola con "success" y los datos obtenidos
             if($posts['data'] = $this->indicadores->getIndicadores()){
 
                 $data = array('response' => 'success', 'posts' => $posts);
+
+                //codificación de los datos a JSON
+                echo json_encode($posts, JSON_PRETTY_PRINT);
             }else{
                 $data = array('response' => 'error', 'message' => 'Fallo al traer los datos');
             }
-
-            //codificación de los datos a JSON
-            echo json_encode($posts);
 
             //Si no es una petición de ajax entonces mostrará un mensaje
         }else{
@@ -53,7 +53,7 @@ class Indicadores extends CI_Controller {
     //Función para insertar los datos mediante formularios
     public function insert() {
 
-        //Validación para ejecutar sólo si es una peticion de AJAX
+        //Validación para ejecutar sólo si es una petición de AJAX
         if($this->input->is_ajax_request()){
 
             //Validación de los formularios
@@ -94,7 +94,7 @@ class Indicadores extends CI_Controller {
     //Función para borrar los datos mediante formularios
     public function delete() {
 
-        //Validación para ejecutar sólo si es una peticion de AJAX
+        //Validación para ejecutar sólo si es una petición de AJAX
         if($this->input->is_ajax_request()){
 
             //Variable que guardará el id entregado
@@ -119,7 +119,7 @@ class Indicadores extends CI_Controller {
     //Función para seleccionar los datos correspondientes de los formularios
     public function edit() {
 
-        //Validación para ejecutar sólo si es una peticion de AJAX
+        //Validación para ejecutar sólo si es una petición de AJAX
         if($this->input->is_ajax_request()){
 
             //Variable que guardará el id enntregado
@@ -150,7 +150,7 @@ class Indicadores extends CI_Controller {
     //Función para actualizar los datos correspondientes de los formularios a la base de datos
     public function update() {
 
-        //Validación para ejecutar sólo si es una peticion de AJAX
+        //Validación para ejecutar sólo si es una petición de AJAX
         if($this->input->is_ajax_request()){
 
             //Variable data que guardará en un array los datos entregados en los IDS de la vista para actualizarlos en la base de datos

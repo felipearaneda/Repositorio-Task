@@ -7,7 +7,7 @@
             <span class="change">OFF</span>
         </div>
         <div class="center">
-            <h1>Información tabla Info_Valor</h1>
+            <h1>Información tabla TITULO</h1>
 
             <!-- Botón para insertar registro -->
             <button class="btn btn-primary" data-toggle="modal" data-target="#modalNew">Nuevo Registro </button>
@@ -165,6 +165,5 @@
     <script src="<?= base_url() ?>assets/js/ajax_put.js"></script>
     <script src="<?= base_url() ?>assets/js/ajax_delete.js"></script>
     <script src="<?= base_url() ?>assets/js/darkMode.js"></script>
-
 
 </body>

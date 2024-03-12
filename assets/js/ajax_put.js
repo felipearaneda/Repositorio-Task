@@ -14,7 +14,7 @@ $(document).on("click", "#update", function(e){
 
     $.ajax({
         //Se conectará con la ruta update para actualizar los datos en la tabla info_valor de la base de datos
-        url: "/repositorio-task/indicadores/update",
+        url: "/api-crud/indicadores/update",
         type: 'post',
         datatype: "json",
         //data que se encargará de indicar a la función update en el controlador indicadores para actualizar los datos corespondientes los datos correspondientes

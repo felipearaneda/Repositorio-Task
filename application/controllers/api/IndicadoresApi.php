@@ -11,7 +11,7 @@ class IndicadoresApi extends REST_Controller {
     {
         parent::__construct();
         //se carga el model de indicadores
-        $this->load->model('indicadores_model', 'indicadores');
+        $this->load->model('Indicadores_model', 'indicadores');
     }
 
     //función GET para obtener datos desde la API
@@ -30,21 +30,21 @@ class IndicadoresApi extends REST_Controller {
     public function indicadores_post() {
 
         //Las variables que insertarán los valores en los campos correspondientes en la base de datos
-        $nombre_indicador = $this->post('nombre_indicador');
-        $codigo_indicador = $this->post('codigo_indicador');
-        $unidad_medida_indicador = $this->post('unidad_medida_indicador');
-        $valor_indicador = $this->post('valor_indicador');
-        $fecha_indicador = $this->post('fecha_indicador');
-        $origen_indicador = $this->post('origen_indicador');
+        $nombre_indicador = $this->post('nombreIndicador');
+        $codigo_indicador = $this->post('codigoIndicador');
+        $unidad_medida_indicador = $this->post('unidadMedidaIndicador');
+        $valor_indicador = $this->post('valorIndicador');
+        $fecha_indicador = $this->post('fechaIndicador');
+        $origen_indicador = $this->post('origenIndicador');
 
         //La variable data juntará todos los datos en un array
         $data = array(
-            'nombre_indicador' => $nombre_indicador,
-            'codigo_indicador' => $codigo_indicador,
-            'unidad_medida_indicador' => $unidad_medida_indicador,
-            'valor_indicador' => $valor_indicador,
-            'fecha_indicador' => $fecha_indicador,
-            'origen_indicador' => $origen_indicador
+            'nombreIndicador' => $nombre_indicador,
+            'codigoIndicador' => $codigo_indicador,
+            'unidadMedidaIndicador' => $unidad_medida_indicador,
+            'valorIndicador' => $valor_indicador,
+            'fechaIndicador' => $fecha_indicador,
+            'origenIndicador' => $origen_indicador
         );
 
         //Si la inserción de los datos en insertIndicador de la variable data es true entonces responderá con INDICADOR CREADO
@@ -70,12 +70,12 @@ class IndicadoresApi extends REST_Controller {
 
         //Variable data que indicará los valores a modificar en los campos correspondientes.
         $data = [
-            'nombre_indicador' => $this->put ('nombre_indicador'),
-            'codigo_indicador' => $this->put ('codigo_indicador'),
-            'unidad_medida_indicador' => $this->put ('unidad_medida_indicador'),
-            'valor_indicador' => $this->put ('valor_indicador'),
-            'fecha_indicador' => $this->put ('fecha_indicador'),
-            'origen_indicador' => $this->put ('origen_indicador'),
+            'nombreIndicador' => $this->put ('nombreIndicador'),
+            'codigoIndicador' => $this->put ('codigoIndicador'),
+            'unidadMedidaIndicador' => $this->put ('unidadMedidaIndicador'),
+            'valorIndicador' => $this->put ('valorIndicador'),
+            'fechaIndicador' => $this->put ('fechaIndicador'),
+            'origenIndicador' => $this->put ('origenIndicador'),
         ];
 
         //variable que guardará el resultado de data con el id de la consulta updateIndicadorApi gracias al model

@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route['default_controller'] = 'indicadores';
+$route['default_controller'] = 'indicadoresApi';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['assets/(:any)'] = 'assets/$1';
@@ -62,5 +62,5 @@ $route['edit'] = 'indicadores/edit';
 $route['update'] = 'indicadores/update';
 $route['dashboard'] = 'indicadores/dashboard';
 $route['dashboardGet'] = 'indicadores/dashboardGet';
-$route['api/indicadoresapi/update/(:any)'] = 'api/indicadoresApi/updateIndicador/$1';
-$route['api/indicadoresapi/delete/(:any)'] = 'api/indicadoresApi/deleteIndicador/$1';
+$route['api/indicadoresApi/update/(:any)'] = 'api/indicadoresApi/updateIndicador/$1';
+$route['api/indicadoresApi/delete/(:any)'] = 'api/indicadoresApi/deleteIndicador/$1';

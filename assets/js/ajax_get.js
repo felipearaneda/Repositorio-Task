@@ -4,7 +4,7 @@ function fetch(){
     //Se inicia el DataTable identificando a la etiqueta canvas de id #myTable
     $('#myTable').DataTable( {
         //Se conecta a la ruta fetch para traer los datos
-        "ajax": '/repositorio-task/indicadores/fetch',
+        "ajax": '/api-crud/indicadores/fetch',
         "type": "get",
         "dataType": "json",
         "responsive": true,
@@ -23,7 +23,7 @@ function fetch(){
             { data : 'valorIndicador' },
             { data : 'fechaIndicador' },
             { data : 'origenIndicador' },
-            //funcion render para poder cargar las etiquetas a con id "edit" y "delete" que luego seran utilizados por las peticiones ajax "edit" y "delete"
+            //function render para poder cargar las etiquetas a con id "edit" y "delete" que luego seran utilizados por las peticiones ajax "edit" y "delete"
             { "render": function(data, type, row, meta) {
                 //Variable que contendrá los botones para luego ser retornada y así mostrarse en cada registro mostrado en el datatable y cada botón tendra el id correspondiente
                 //gracias al parámetro row que permite obtener el id de cada registro

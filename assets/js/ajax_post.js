@@ -13,7 +13,7 @@ $(document).on("click", "#send", function(e){
 
     $.ajax({
         //se conecta con la ruta insert para insertar los datos en la base de datos
-        url: "/repositorio-task/indicadores/insert",
+        url: "/api-crud/indicadores/insert",
         type: 'post',
         datatype: "json",
         //data que pasara los valores correspondientes de las variables anterior mencionadas para insertarlas en cada columna de la tabla info_valor en la base de datos
